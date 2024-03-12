@@ -28,6 +28,13 @@ const Cart = () => {
     fetchApi(api);
   }, []);
   console.log(products);
+
+
+  let a = products.reduce((acc, item, i)=>{
+   acc = acc + item.price
+   return acc
+  },0)
+
   return (
     <>
       <div className="cartTable">
@@ -59,7 +66,7 @@ const Cart = () => {
                       </td>
                       <td>{item.title.substr(0, 13)}...</td>
                       <td>{item.price}</td>
-                      <td>Null</td>
+                      <td>1</td>
                       <td>{item.price}</td>
                     </tr>
                   </tbody>
@@ -89,12 +96,12 @@ const Cart = () => {
               <hr />
               <div className="textCol">
                 <text>Subtotal</text>
-                <text>{products[0]?.price}</text>
+                <text>{a}</text>
               </div>
               <hr />
               <div className="textCol">
                 <text>Total</text>
-                <text>{Math.round(products[0]?.price)}</text>
+                <text>{Math.round(a)}</text>
               </div>
               <hr />
               <div className="textCol">
