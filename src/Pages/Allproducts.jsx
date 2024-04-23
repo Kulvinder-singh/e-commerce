@@ -21,9 +21,9 @@ const AllProducts = ({ addCart, setAddCart }) => {
   }, [api]);
 
   const getPrice = () => {
-    const price = apiData?.price;
     setAddCart(addCart + 1);
-    console.log(price);
+    // const price = apiData?.price;
+    // console.log(price);
   };
 
   const handleCart = () => {
@@ -51,7 +51,7 @@ const AllProducts = ({ addCart, setAddCart }) => {
             <text>{apiData?.category.toUpperCase()}</text>
             <h3>{apiData?.title}</h3>
             <h3>Price ${Math.round(apiData?.price)}.00</h3>
-            <text>{apiData?.description.substr(0,220)}</text>
+            <text>{apiData?.description.substr(0, 220)}</text>
           </div>
           <div className="d-flex align-items-center ps-3">
             <div className="m-3">
@@ -78,7 +78,9 @@ const AllProducts = ({ addCart, setAddCart }) => {
             </div>
           </div>
           <hr />
-          <text className="ps-4">Category: {apiData?.category.toUpperCase()}</text>
+          <text className="ps-4">
+            Category: {apiData?.category.toUpperCase()}
+          </text>
         </div>
       </div>
     </>

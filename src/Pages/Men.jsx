@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Men = () => {
   return (
     <div>
-<h1 className='text-center'>Men</h1>      
+      <h1 className="text-center">Men</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Men
+export default Men;

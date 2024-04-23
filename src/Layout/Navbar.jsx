@@ -20,12 +20,12 @@ const NavbarComp = ({ addCart }) => {
       <div className="">
         <Navbar
           expand="lg"
-          className="py-3 px-4 d-flex"
+          className="py-3 px-4 d-flex navbarheader"
           style={{ width: "98.7vw", backgroundColor: "#14618F" }}
         >
           <Container>
             <Navbar.Brand>
-              <Link to={"/"} style={{  color: "white", textDecoration: "none" }}>
+              <Link to={"/"} style={{ color: "white", textDecoration: "none" }}>
                 <img src={logo} alt="" style={{ height: "60px" }} />
               </Link>
             </Navbar.Brand>
@@ -35,7 +35,11 @@ const NavbarComp = ({ addCart }) => {
                 <Nav.Link>
                   <Link
                     to={"/"}
-                    style={{fontWeight:"600", color: "white", textDecoration: "none" }}
+                    style={{
+                      fontWeight: "600",
+                      color: "white",
+                      textDecoration: "none",
+                    }}
                   >
                     EVERTHING
                   </Link>{" "}
@@ -43,7 +47,11 @@ const NavbarComp = ({ addCart }) => {
                 <Nav.Link>
                   <Link
                     // to={"/women"}
-                    style={{ fontWeight:"600",color: "white", textDecoration: "none" }}
+                    style={{
+                      fontWeight: "600",
+                      color: "white",
+                      textDecoration: "none",
+                    }}
                   >
                     WOMEN
                   </Link>
@@ -51,7 +59,11 @@ const NavbarComp = ({ addCart }) => {
                 <Nav.Link>
                   <Link
                     // to={"/men"}
-                    style={{fontWeight:"600", color: "white", textDecoration: "none" }}
+                    style={{
+                      fontWeight: "600",
+                      color: "white",
+                      textDecoration: "none",
+                    }}
                   >
                     MEN
                   </Link>
@@ -59,7 +71,11 @@ const NavbarComp = ({ addCart }) => {
                 <Nav.Link>
                   <Link
                     // to={"/accessories"}
-                    style={{fontWeight:"600", color: "white", textDecoration: "none" }}
+                    style={{
+                      fontWeight: "600",
+                      color: "white",
+                      textDecoration: "none",
+                    }}
                   >
                     ACCESSORIES
                   </Link>
@@ -81,7 +97,12 @@ const NavbarComp = ({ addCart }) => {
           </Container>
           <Nav.Link>
             {tokenData ? (
-              <div onClick={() => handleLogout()} style={{fontWeight:"600", color:"white"}}>Logout</div>
+              <div
+                onClick={() => handleLogout()}
+                style={{ fontWeight: "600", color: "white" }}
+              >
+                Logout
+              </div>
             ) : (
               <Link
                 className="d-flex flex-row-reverse p-4"
@@ -120,7 +141,9 @@ const NavbarComp = ({ addCart }) => {
             </Link>
           </Nav.Link>
           <div className="nav-cart-value">
-            <span className="text-black" style={{fontSize:"12px"}}>{addCart}</span>
+            <span className="text-black" style={{ fontSize: "12px" }}>
+              {addCart}
+            </span>
           </div>
         </Navbar>
       </div>

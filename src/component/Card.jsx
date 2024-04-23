@@ -26,13 +26,15 @@ const ProCard = () => {
   };
 
   console.log(apiData);
+
   return (
     <>
       {apiData?.map((item, i) => {
         return (
           <div className="text-center" key={i}>
-            <Card className="h-100"
-              onClick={() => handleGet(i+1, item.title)}
+            <Card
+              className="h-100"
+              onClick={() => handleGet(i + 1, item.title)}
               style={{
                 width: "15rem",
                 alignItems: "center",
@@ -46,7 +48,7 @@ const ProCard = () => {
               />
               <Card.Body>
                 <Card.Title>
-                  <h6>{item.title.substr(0,30)}...</h6>
+                  <h6>{item.title.substr(0, 30)}...</h6>
                 </Card.Title>
                 <Card.Text>{item.category}</Card.Text>
                 <Card.Title>

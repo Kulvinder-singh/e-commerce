@@ -14,7 +14,7 @@ const Login = () => {
   const [token, setToken] = useState(localStorage.getItem("token"))
   // ->
   const navigate = useNavigate();
-  const loaction = useLocation();
+  const location = useLocation();
   // ->
   const haldleInputField = (e) => {
     const sName = e.target.name;
@@ -23,25 +23,24 @@ const Login = () => {
   };
   // ->
 
-  useEffect(()=>{
-    if(token){
-      navigate("/")
+  useEffect(() => {
+    if (token) {
+      navigate("/");
     }
-  },[navigate, token])
-
+  }, [navigate, token]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (loaction.pathname === "/register" && form.name === "") {
+    if (location.pathname === "/register" && form.name === "") {
       return alert("Please Enter Name");
     } else if (form.email === "") {
       return alert("Please Enter Email");
-    } else if (loaction.pathname === "/register" && form.mobileNum === "") {
+    } else if (location.pathname === "/register" && form.mobileNum === "") {
       return alert("Please Enter Mobile Number");
     } else if (form.password === "") {
       return alert("Please Enter Password");
     } else if (
-      loaction.pathname === "/register" &&
+      location.pathname === "/register" &&
       form.confirmPassword === ""
     ) {
       return alert("Please Enter Confirm Password");
@@ -83,22 +82,22 @@ const Login = () => {
     if (token) {
       navigate("/");
     }
-  }, [loaction.pathname]);
+  }, [location.pathname]);
 
   return (
     <>
-      <div className="row mt-5 ">
+      <div className="container-fluid mt-4">
         <div className="col-5 container shadow-lg p-3 mb-4 bg-white rounded">
-          {loaction.pathname === "/register" && (
+          {location.pathname === "/register" && (
             <h3 className="text-center">Register</h3>
           )}
-          {loaction.pathname === "/login" && (
+          {location.pathname === "/login" && (
             <h3 className="text-center">Login</h3>
           )}
 
           <Form onSubmit={handleSubmit} className="row">
             <Form.Group className="container col-8" controlId="formBasicEmail">
-              {loaction.pathname === "/register" && (
+              {location.pathname === "/register" && (
                 <>
                   <Form.Label>Name</Form.Label>
                   <Form.Control
@@ -122,7 +121,7 @@ const Login = () => {
                 onChange={haldleInputField}
                 autoComplete="off"
               />
-              {loaction.pathname === "/register" && (
+              {location.pathname === "/register" && (
                 <>
                   <Form.Label>Mobile Number</Form.Label>
                   <Form.Control
@@ -150,7 +149,7 @@ const Login = () => {
                 onChange={haldleInputField}
                 autoComplete="off"
               />
-              {loaction.pathname === "/register" && (
+              {location.pathname === "/register" && (
                 <>
                   <Form.Label>Confirm Password</Form.Label>
                   <Form.Control

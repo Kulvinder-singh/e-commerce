@@ -33,11 +33,6 @@ function App() {
         <Footer />
       </BrowserRouter>
     </>
-
-
-
-
-
   );
 }
 
